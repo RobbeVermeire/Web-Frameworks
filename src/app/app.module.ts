@@ -14,6 +14,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AntwerpenComponent } from './antwerpen/antwerpen.component';
 import { GameComponent } from './game/game.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { JuigdhuisComponent } from './juigdhuis/juigdhuis.component';
+import { JeugdhuisService } from './juigdhuis/jeugdhuis-service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,12 +30,14 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     NavBarComponent,
     AntwerpenComponent,
     GameComponent,
+    JuigdhuisComponent,
 
   ],
 
   imports: [
     MDBBootstrapModule.forRoot(),    
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
@@ -40,6 +45,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       {path:'', redirectTo:'home',pathMatch:'full'},
       {path:'antwerpen', component:AntwerpenComponent},
       {path:'game', component:GameComponent},
+      {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),
     NgCircleProgressModule.forRoot({
@@ -58,7 +64,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     })
   ],
   schemas: [ NO_ERRORS_SCHEMA ],  
-  providers: [],
+  providers: [
+    JeugdhuisService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
