@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JeugdhuisService } from './jeugdhuis-service';
+import { JeugdhuisService,IJeugdhuis, IDatum } from './jeugdhuis-service';
 
 
 @Component({
@@ -7,9 +7,14 @@ import { JeugdhuisService } from './jeugdhuis-service';
   templateUrl: './juigdhuis.component.html',
   styleUrls: ['./juigdhuis.component.scss']
 })
-export class JuigdhuisComponent  {
- constructor(private service : JeugdhuisService){
+export class JuigdhuisComponent implements OnInit  {
+ 
+ data: IDatum[]
+ constructor(private service : JeugdhuisService){ }
 
+ ngOnInit()
+ {
+   this.service.getJeugdhuizen()
+   .subscribe(d => this.data = d.data);
  }
-
 }
