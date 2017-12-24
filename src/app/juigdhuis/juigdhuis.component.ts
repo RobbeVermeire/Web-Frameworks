@@ -9,8 +9,8 @@ import { Data } from '@angular/router/src/config';
   styleUrls: ['./juigdhuis.component.scss']
 })
 export class JuigdhuisComponent implements OnInit  {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 51.260197;
+  lng: number = 4.402771;
   var_lat : number
   var_lng : number
   data: IDatum[]

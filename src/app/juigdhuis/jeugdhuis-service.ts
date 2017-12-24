@@ -13,7 +13,8 @@ export class JeugdhuisService {
             return this._http.get<IJeugdhuis>("http://datasets.antwerpen.be/v4/gis/jeugdhuisoverzicht.json")
            // .do(data => console.log(JSON.stringify(data)));
             .map(root => { root.data.forEach(data => data.lat = Number(data.point_lat));return root})
-            .map(root => { root.data.forEach(data => data.long = Number(data.point_lng));return root});         
+            .map(root => { root.data.forEach(data => data.long = Number(data.point_lng));return root})
+            .map(root => { root.data.forEach(data => data.naam_short = data.naam.replace('Jeugdhuis',''));return root})      
         }
 }
         export interface IPaging {
@@ -36,6 +37,7 @@ export class JeugdhuisService {
             type: string;
             subtype: string;
             naam: string;
+            naam_short: string;
             straat: string;
             huisnummer: string;
             postcode: string;
