@@ -2,6 +2,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient} from "@angular/common/http"
 import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class JeugdhuisService {
@@ -11,7 +12,8 @@ export class JeugdhuisService {
         {
             return this._http.get<IJeugdhuis>("http://datasets.antwerpen.be/v4/gis/jeugdhuisoverzicht.json")
            // .do(data => console.log(JSON.stringify(data)));
-            //.map(root => {return root});             
+            .map(root => { root.data.forEach(data => data.lat = Number(data.point_lat));return root})
+            .map(root => { root.data.forEach(data => data.long = Number(data.point_lng));return root});         
         }
 }
         export interface IPaging {
@@ -27,6 +29,8 @@ export class JeugdhuisService {
             objectid: number;
             point_lat: string;
             point_lng: string;
+            lat:number;
+            long:number;
             id?: any;
             thema: string;
             type: string;

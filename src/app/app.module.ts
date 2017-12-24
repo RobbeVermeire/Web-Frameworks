@@ -18,7 +18,7 @@ import { JuigdhuisComponent } from './juigdhuis/juigdhuis.component';
 import { JeugdhuisService } from './juigdhuis/jeugdhuis-service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     MDBBootstrapModule.forRoot(),    
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC4opQbiisIq3c6T7QKKWthb1bCKQbANt0'
+    }),
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'weather', component: WeatherComponent},
