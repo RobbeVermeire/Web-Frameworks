@@ -19,6 +19,7 @@ import { JeugdhuisService } from './juigdhuis/jeugdhuis-service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AgmCoreModule } from '@agm/core';
+import { DrawComponent } from './draw/draw.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AgmCoreModule } from '@agm/core';
     GameComponent,
     JuigdhuisComponent,
     ProgressBarComponent,
+    DrawComponent,
 
   ],
 
@@ -51,6 +53,7 @@ import { AgmCoreModule } from '@agm/core';
       {path:'game', component:GameComponent},
       {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:'progress-bar', component:ProgressBarComponent},
+      {path: 'draw', component: DrawComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),
     NgCircleProgressModule.forRoot({
