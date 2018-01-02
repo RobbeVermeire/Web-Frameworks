@@ -20,6 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AgmCoreModule } from '@agm/core';
 import { DrawComponent } from './draw/draw.component';
+import { AfstandComponent } from './afstand/afstand.component';
+import {AfstandService} from './afstand/afstand-service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { DrawComponent } from './draw/draw.component';
     JuigdhuisComponent,
     ProgressBarComponent,
     DrawComponent,
+    AfstandComponent,
 
   ],
 
@@ -54,6 +57,7 @@ import { DrawComponent } from './draw/draw.component';
       {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:'progress-bar', component:ProgressBarComponent},
       {path: 'draw', component: DrawComponent},
+      {path: 'afstand', component: AfstandComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),
     NgCircleProgressModule.forRoot({
@@ -73,7 +77,8 @@ import { DrawComponent } from './draw/draw.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],  
   providers: [
-    JeugdhuisService
+    JeugdhuisService,
+    AfstandService
   ],
   bootstrap: [AppComponent]
 })
