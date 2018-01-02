@@ -7,12 +7,12 @@ import "rxjs/add/operator/map";
 export class AfstandService  {
     constructor(private _http: HttpClient) {}
        
-        getAfstand() : Observable<IAfstand>
+
+
+        getAfstand(lat1: number,lng1 : number,lat2 : number, lng2: number) : Observable<IAfstand>
         {
-            return this._http.get<IAfstand>("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyBfSOt9GMm1ogFXdh3N2wjZAqePo1l7uCo")
-            //.do(data => console.log(JSON.stringify(data)));
-            //.map(root => { root.data.forEach(data => data.lat = Number(data.point_lat));return root})
-           
+            return this._http.get<IAfstand>("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+lat1+","+lng1+"C&destinations="+lat2+","+lng2+",NY&key=AIzaSyBfSOt9GMm1ogFXdh3N2wjZAqePo1l7uCo");
+            // geeft 200 status code terug
         }
 }
 

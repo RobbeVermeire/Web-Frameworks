@@ -15,13 +15,12 @@ import { AntwerpenComponent } from './antwerpen/antwerpen.component';
 import { GameComponent } from './game/game.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { JuigdhuisComponent } from './juigdhuis/juigdhuis.component';
-import { JeugdhuisService } from './juigdhuis/jeugdhuis-service';
+import { JeugdhuisService } from './services/jeugdhuis-service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AgmCoreModule } from '@agm/core';
-import { DrawComponent } from './draw/draw.component';
 import { AfstandComponent } from './afstand/afstand.component';
-import {AfstandService} from './afstand/afstand-service';
+import {AfstandService} from './services/afstand-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import {AfstandService} from './afstand/afstand-service';
     GameComponent,
     JuigdhuisComponent,
     ProgressBarComponent,
-    DrawComponent,
     AfstandComponent,
 
   ],
@@ -56,7 +54,6 @@ import {AfstandService} from './afstand/afstand-service';
       {path:'game', component:GameComponent},
       {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:'progress-bar', component:ProgressBarComponent},
-      {path: 'draw', component: DrawComponent},
       {path: 'afstand', component: AfstandComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),

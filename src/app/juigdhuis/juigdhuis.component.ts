@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JeugdhuisService,IJeugdhuis, IDatum } from './jeugdhuis-service';
+import { JeugdhuisService,IJeugdhuis, IDatum } from '../services/jeugdhuis-service';
 import { Data } from '@angular/router/src/config';
 
 
