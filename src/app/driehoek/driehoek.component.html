@@ -1,0 +1,9 @@
+<div class="md-form">
+  <input [(ngModel)]="Zijde1" mdbActive type="text" id="form1" class="form-control">
+  <label  for="form1" class="">Zijde 1: </label>
+</div><div class="md-form">
+  <input [(ngModel)]="Zijde2" mdbActive type="text" id="form2" class="form-control">
+  <label  for="form1" class="">Zijde 2: </label>
+</div>
+<button type="button" class="btn btn-primary waves-light" (click)="Calculate()" mdbRippleRadius>Bereken Overstaand Zijde</button>
+<p class="text-justify">{{Zijde3 | number : '1.2-2'}}</p>

@@ -22,6 +22,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AfstandComponent } from './afstand/afstand.component';
 import {AfstandService} from './services/afstand-service';
 import { CirkelComponent } from './cirkel/cirkel.component';
+import { DriehoekComponent } from './driehoek/driehoek.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CirkelComponent } from './cirkel/cirkel.component';
     ProgressBarComponent,
     AfstandComponent,
     CirkelComponent,
+    DriehoekComponent,
 
   ],
 
@@ -58,7 +60,9 @@ import { CirkelComponent } from './cirkel/cirkel.component';
       {path:'progress-bar', component:ProgressBarComponent},
       {path: 'afstand', component: AfstandComponent},
       {path: 'cirkel', component : CirkelComponent},
+      {path:'driehoek', component: DriehoekComponent},
       {path:"**", component:PageNotFoundComponent}
+      
     ],{useHash:true}),
     NgCircleProgressModule.forRoot({
       "radius": 60,
