@@ -56,20 +56,6 @@ import { DrawComponent } from './draw/draw.component';
       {path: 'draw', component: DrawComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),
-    NgCircleProgressModule.forRoot({
-      "radius": 60,
-      "space": -10,
-      "outerStrokeWidth": 10,
-      "outerStrokeColor": "#4882c2",
-      "innerStrokeColor": "#e7e8ea",
-      "innerStrokeWidth": 10,
-      "title": "UI",
-      "animateTitle": false,
-      "animationDuration": 1000,
-      "showUnits": false,
-      "showBackground": false,
-      "clockwise": false
-    })
   ],
   schemas: [ NO_ERRORS_SCHEMA ],  
   providers: [
