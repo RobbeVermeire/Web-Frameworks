@@ -21,6 +21,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AgmCoreModule } from '@agm/core';
 import { AfstandComponent } from './afstand/afstand.component';
 import {AfstandService} from './services/afstand-service';
+import { CirkelComponent } from './cirkel/cirkel.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {AfstandService} from './services/afstand-service';
     JuigdhuisComponent,
     ProgressBarComponent,
     AfstandComponent,
+    CirkelComponent,
 
   ],
 
@@ -55,6 +57,7 @@ import {AfstandService} from './services/afstand-service';
       {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:'progress-bar', component:ProgressBarComponent},
       {path: 'afstand', component: AfstandComponent},
+      {path: 'cirkel', component : CirkelComponent},
       {path:"**", component:PageNotFoundComponent}
     ],{useHash:true}),
     NgCircleProgressModule.forRoot({

@@ -1,0 +1,15 @@
+<div class="md-form">
+  <input [(ngModel)]="InputeValue" mdbActive type="text" id="form1" class="form-control">
+  <label  for="form1" class="">Enter cirkle diameter/radian</label>
+</div>
+
+<div class="form-group">
+  <input (click)="SelectDia()" name="group1" type="radio" id="radio1">
+  <label  for="radio1">diameter</label>
+</div>
+<div class="form-group">
+  <input  (click)="SelectRadi()" name="group1" type="radio" id="radio2">
+  <label for="radio2">radian</label>
+</div>
+
+<button type="button" class="btn btn-primary waves-light" (click)="Calculate()" mdbRippleRadius>Calculate</button>
