@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <!-- BEGIN IMAGE  -->
+<div class="row">
+    <div class="col-md-4 ">
+      <div id="row1" class="view hm-white-slight waves-light" mdbRippleRadius>
+          <img class="img-fluid" id='img1'src="https://purewows3.imgix.net/images/articles/2017_09/pcos-myths-weight-loss-.jpg?auto=format,compress&cs=strip" alt="Card image cap">
+      </div>
+    <!-- EINDE IMAGE --> 
+    <p *ngIf="TryAgain">Probeer opnieuw aub, er zit een fout in u input!</p> 
+<!-- BEGIN CARD -->
+<div class="card-body"> 
+<!-- BEGIN LENGTE FORM -->
+    <div class="row">
+    <div class="md-form col-md-8">
+    <input [(ngModel)]='lengte' mdbActive type="text" id="form2" class="form-control">
+    <label for="form2" class="">Lengte</label>
+    </div>
+
+    <div class="col-md-4"> 
+      <select class="form-control" [(ngModel)]='WeightChoice'>
+        <option selected value="Kilogram"> Centimeter </option>
+        <option value="Pond"> Inches </option>  
+      </select>
+    </div>
+        </div>
+        
+<!-- EINDE LENGTE FORM -->
+
+<!-- BEGIN GEWICHT FORM -->
+<div class='row'>
+    <div class="md-form col-md-8">
+  <input [(ngModel)]='gewicht' mdbActive type="text" id="form1" class="form-control">
+  <label for="form1" class="">Gewicht</label>
+    </div>
+    <div class="col-md-4">
+    <select class="form-control" [(ngModel)]='WeightChoice'>
+        <option selected value="Kilogram"> Kilogram </option>
+        <option value="Pond"> Pond </option>  
+      </select>
+    </div>
+    </div>
+  <!--EINDE GEWICHT FORM  -->
+    <div class="row">
+      <div class='col-md-6'>
+  <button *ngIf="ButtonEnabled; else Buttondisabled" type="button" class="btn btn-primary waves-light" (click)="CalculateBmi" mdbRippleRadius>Bereken BMI</button> 
+  <ng-template #Buttondisabled>
+      <button type="button" class="btn btn-primary waves-light" mdbRippleRadius disabled>Bereken BMI</button>
+    </ng-template> 
+      </div>
+      <div class = 'col-md-6'>
+        <p>Uw BMI is {{CalculateBmi}}</p>
+      </div>
+        </div>
+      
+    </div>    
+<!-- EINDE CARD -->
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card-body">
+            <!--Title-->
+            <h4 class="card-title">Card title</h4>
+            <!--Text-->
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
+        </div>
+
+    </div>
+</div>
+</div>
+                                    

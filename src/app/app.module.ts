@@ -23,6 +23,7 @@ import { AfstandComponent } from './afstand/afstand.component';
 import {AfstandService} from './services/afstand-service';
 import { CirkelComponent } from './cirkel/cirkel.component';
 import { DriehoekComponent } from './driehoek/driehoek.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DriehoekComponent } from './driehoek/driehoek.component';
     AfstandComponent,
     CirkelComponent,
     DriehoekComponent,
+    BmiComponent
 
   ],
 
@@ -61,6 +63,7 @@ import { DriehoekComponent } from './driehoek/driehoek.component';
       {path: 'afstand', component: AfstandComponent},
       {path: 'cirkel', component : CirkelComponent},
       {path:'driehoek', component: DriehoekComponent},
+      {path:'bmi', component: BmiComponent},
       {path:"**", component:PageNotFoundComponent}
       
     ],{useHash:true}),

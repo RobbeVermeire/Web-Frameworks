@@ -1,0 +1,81 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+        <div class="card">
+            <div class="card-header">Velo Stations</div>
+            <div class="card-block">
+                <table class="table table-responsive table-hover">
+                    <thead class="blue-grey lighten-4">
+                        <tr>
+                            <th>District</th>
+                            <th>Straatnaam</th>
+                            <th>Huisnummer</th>
+                            <th>Gebruik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let station of veloData" (click)="SelectItem(station)">
+                            <td>{{station.district}}</td>
+                            <td>{{station.straatnaam}}</td>
+                            <td>{{station.huisnummer}}</td>
+                            <td *ngIf="station.gebruik == 'IN_GEBRUIK'">In Gebruik</td>
+                            <td *ngIf="station.gebruik == 'GEPLAND'"> Gepland</td>
+                            <td *ngIf="station.gebruik == 'BUITEN_GEBRUIK'"> Buiten Gebruik</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-6 col-md-6">      
+    <agm-map [latitude]="lat" [longitude]="lng" style="height: 350px">
+    <agm-marker [latitude]="var_lat" [longitude]="var_lng"></agm-marker>
+    </agm-map>
+    </div>
+  </div>
+</div> -->
+
+
+<!--Card-->
+<div class="card card-cascade wider reverse my-4">
+        
+            <!--Card image-->
+            <div class="view overlay hm-white-slight waves-light" mdbRippleRadius>
+                    <agm-map [latitude]="lat" [longitude]="lng" style="height: 350px">
+                            <agm-marker [latitude]="var_lat" [longitude]="var_lng"></agm-marker>
+                            </agm-map>
+            </div>
+            <!--/Card image-->
+        
+            <!--Card content-->
+            <div class="card">
+                    
+                    <div class="card-block">
+                        <table class="table table-responsive table-hover">
+                            <thead class="blue-grey lighten-4">
+                                <tr>
+                                    <th>District</th>
+                                    <th>Straatnaam</th>
+                                    <th>Huisnummer</th>
+                                    <th>Gebruik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let station of veloData" (click)="SelectItem(station)">
+                                    <td>{{station.district}}</td>
+                                    <td>{{station.straatnaam}}</td>
+                                    <td>{{station.huisnummer}}</td>
+                                    <td *ngIf="station.gebruik == 'IN_GEBRUIK'">In Gebruik</td>
+                                    <td *ngIf="station.gebruik == 'GEPLAND'"> Gepland</td>
+                                    <td *ngIf="station.gebruik == 'BUITEN_GEBRUIK'"> Buiten Gebruik</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            </div>
+            <!--/.Card content-->
+        <!--/.Card-->
+                    
+
+
