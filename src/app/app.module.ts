@@ -15,11 +15,14 @@ import { AntwerpenComponent } from './antwerpen/antwerpen.component';
 import { GameComponent } from './game/game.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { JuigdhuisComponent } from './juigdhuis/juigdhuis.component';
-import { JeugdhuisService } from './juigdhuis/jeugdhuis-service';
+import { JeugdhuisService } from './services/jeugdhuis-service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AgmCoreModule } from '@agm/core';
-import { DrawComponent } from './draw/draw.component';
+import { AfstandComponent } from './afstand/afstand.component';
+import {AfstandService} from './services/afstand-service';
+import { CirkelComponent } from './cirkel/cirkel.component';
+import { DriehoekComponent } from './driehoek/driehoek.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { DrawComponent } from './draw/draw.component';
     GameComponent,
     JuigdhuisComponent,
     ProgressBarComponent,
-    DrawComponent,
+    AfstandComponent,
+    CirkelComponent,
+    DriehoekComponent,
 
   ],
 
@@ -53,13 +58,17 @@ import { DrawComponent } from './draw/draw.component';
       {path:'game', component:GameComponent},
       {path:'jeugdhuis', component:JuigdhuisComponent},
       {path:'progress-bar', component:ProgressBarComponent},
-      {path: 'draw', component: DrawComponent},
+      {path: 'afstand', component: AfstandComponent},
+      {path: 'cirkel', component : CirkelComponent},
+      {path:'driehoek', component: DriehoekComponent},
       {path:"**", component:PageNotFoundComponent}
+      
     ],{useHash:true}),
   ],
   schemas: [ NO_ERRORS_SCHEMA ],  
   providers: [
-    JeugdhuisService
+    JeugdhuisService,
+    AfstandService
   ],
   bootstrap: [AppComponent]
 })
