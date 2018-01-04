@@ -18,7 +18,7 @@ export class BmiComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.ButtonEnabled=true;
+    this.ButtonEnabled = true;
   }
 
   CalculateBmi(): number {
@@ -32,6 +32,9 @@ export class BmiComponent implements OnInit {
     } else {
       this.TryAgain = true;
     }
+
+    
+
   }
 
   ChangeWeightChoice(keuze: string) {
