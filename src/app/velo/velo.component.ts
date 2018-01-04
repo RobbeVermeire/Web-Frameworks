@@ -14,16 +14,18 @@ export class VeloComponent implements OnInit {
   lng = 4.402771;
   var_lat= 51.22808499687600;
   var_lng= 4.40899727964430;
-veloData: IData[];
+  veloData: IData[];
+  veloObject : IData;
   constructor(private service: VeloService) { }
 
-  SelectItem(station: Data): void {
+  SelectItem(id: Number ): void {
 
-    //Joris is gay :)
-    console.log(station.point_lat);
-    console.log(station.point_lng);
-    this.var_lat = station.point_lat;
-    this.var_lng = station.point_lng;
+    this.veloObject = this.veloData[id.toString()];
+    
+    console.log("id: "+ id);
+    console.log("obj: "+ this.veloObject);
+    this.var_lat = Number(this.veloObject.point_lat);
+    this.var_lng = Number(this.veloObject.point_lng);
   }
 
   ngOnInit() {

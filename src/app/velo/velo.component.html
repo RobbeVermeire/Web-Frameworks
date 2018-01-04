@@ -23,13 +23,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let station of veloData" (click)="SelectItem(station)">
-                                    <td>{{station.district}}</td>
-                                    <td>{{station.straatnaam}}</td>
-                                    <td>{{station.huisnummer}}</td>
-                                    <td *ngIf="station.gebruik == 'IN_GEBRUIK'">In Gebruik</td>
-                                    <td *ngIf="station.gebruik == 'GEPLAND'"> Gepland</td>
-                                    <td *ngIf="station.gebruik == 'BUITEN_GEBRUIK'"> Buiten Gebruik</td>
+                                <tr *ngFor="let station of veloData; let i = index" (click)="SelectItem(i)" >
+                                            <td>{{station.district}}</td>
+                                            <td>{{station.straatnaam}}</td>
+                                            <td>{{station.huisnummer}}</td>
+                                            <td *ngIf="station.gebruik == 'IN_GEBRUIK'">In Gebruik</td>
+                                            <td *ngIf="station.gebruik == 'GEPLAND'"> Gepland</td>
+                                            <td *ngIf="station.gebruik == 'BUITEN_GEBRUIK'"> Buiten Gebruik</td>
                                 </tr>
                             </tbody>
                         </table>
