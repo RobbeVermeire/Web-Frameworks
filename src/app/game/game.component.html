@@ -2,15 +2,12 @@
 
     <label for="input">Typ hier het woord:</label>
     <input [(ngModel)]="inputText" type="text" id="input"/>
-    <button (click)="NewWord()">Nieuw woord</button>
+    <button (click)="ButtonClick()">Nieuw woord</button>
     <button (click)="CheckWord()">Check woord</button>
     <p *ngIf="hey;else fout_content">Je hebt het juist!</p>
     <ng-template #fout_content> Je hebt het fout!</ng-template>
-    <circle-progress></circle-progress>
     <p>{{word}}</p>
-
-
-
+    
 <ul>
   <li *ngFor="let word of words">
     {{ word }}

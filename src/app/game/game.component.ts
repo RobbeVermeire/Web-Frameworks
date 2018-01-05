@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { delay } from 'q';
+import { setInterval } from 'timers';
 
 @Component({
   selector: 'app-game',
@@ -9,31 +10,35 @@ import { delay } from 'q';
 })
 
 export class GameComponent implements OnInit {
+  words = [
+    'copper',
+    'explain',
+    'ill-fated',
+    'truck',
+    'neat',
+    'unite',
+    'branch',
+    'educated',
+    'tenuous',
+    'hum',
+    'decisive',
+    'notice'];
   hey= true;
   inputText = 'hey';
   word: string;
 
-  words: string[]= [
-  'copper',
-  'explain',
-  'ill-fated',
-  'truck',
-  'neat',
-  'unite',
-  'branch',
-  'educated',
-  'tenuous',
-  'hum',
-  'decisive',
-  'notice'];
+  ngOnInit() {
+    setInterval(this.NewWord , 1000);
+  }
 
   NewWord() {
+    this.word = this.words[ _.random(0, this.words.length)];
+    console.log('Nieuw woord:' + this.word);
+          }
 
-    while (true) {
-      this.word = this.words[ _.random(0, this.words.length)];
-      console.log('Nieuw woord:' + this.word);
-      delay(3000);
-    }
+  ButtonClick() {
+    this.NewWord();
+    setTimeout(this.ButtonClick , 2000);
   }
 
   CheckWord() {
@@ -47,7 +52,5 @@ export class GameComponent implements OnInit {
   constructor() {
    }
 
-  ngOnInit() {
-  }
 
 }

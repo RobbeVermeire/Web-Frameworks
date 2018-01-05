@@ -6,7 +6,6 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { HomeComponent} from './home/home.component';
-import { DeLijnComponent } from './delijn/delijn.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {RouterModule} from '@angular/router';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -24,7 +23,8 @@ import { DriehoekComponent } from './driehoek/driehoek.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { VeloComponent } from './velo/velo.component';
 import { VeloService } from './services/velo-service';
-import { NieuwsComponent } from './nieuws/nieuws.component';
+import { FilmService } from './services/film-service';
+import { FilmComponent } from './film/film.component';
 
 
 @NgModule({
@@ -32,7 +32,6 @@ import { NieuwsComponent } from './nieuws/nieuws.component';
     AppComponent,
     WeatherComponent,
     HomeComponent,
-    DeLijnComponent,
     WelcomeComponent,
     PageNotFoundComponent,
     NavBarComponent,
@@ -43,7 +42,7 @@ import { NieuwsComponent } from './nieuws/nieuws.component';
     DriehoekComponent,
     VeloComponent,
     BmiComponent,
-    NieuwsComponent
+    FilmComponent,
 
   ],
 
@@ -56,7 +55,7 @@ import { NieuwsComponent } from './nieuws/nieuws.component';
     }),
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
-      {path: 'weather', component: WeatherComponent},
+      {path: 'film', component: FilmComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'game', component: GameComponent},
       {path: 'jeugdhuis', component: JuigdhuisComponent},
@@ -72,7 +71,8 @@ import { NieuwsComponent } from './nieuws/nieuws.component';
   providers: [
     JeugdhuisService,
     VeloService,
-    AfstandService
+    AfstandService,
+    FilmService
   ],
   bootstrap: [AppComponent]
 })

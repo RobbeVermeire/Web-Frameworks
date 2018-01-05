@@ -12,6 +12,7 @@ export class BmiComponent implements OnInit {
   WeightChoice: string;
   ButtonEnabled: boolean;
   TryAgain: boolean;
+  bmi: number;
 
 
   constructor() {
@@ -21,20 +22,17 @@ export class BmiComponent implements OnInit {
     this.ButtonEnabled = true;
   }
 
-  CalculateBmi(): number {
+  CalculateBmi(): void {
     if (Number(this.lengte) && Number(this.gewicht) && this.WeightChoice === 'Kilogram' ) {
       this.TryAgain = false;
-      return this.gewicht / ((this.lengte / 100) * (this.lengte / 100));
+      this.bmi =  this.gewicht / ((this.lengte / 100) * (this.lengte / 100));
     } else if (Number(this.lengte) && Number(this.gewicht) && this.WeightChoice === 'Pond' ) {
       this.TryAgain = false;
-       return  703 // Conversion factor of 703 (kg/m2)/(lb/in2)
+      this.bmi =  703 // Conversion factor of 703 (kg/m2)/(lb/in2)
        * (this.gewicht / ((this.lengte) * (this.lengte)));
     } else {
       this.TryAgain = true;
     }
-
-    
-
   }
 
   ChangeWeightChoice(keuze: string) {

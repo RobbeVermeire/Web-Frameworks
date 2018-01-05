@@ -1,0 +1,23 @@
+<!--Card content-->
+<div class="card">
+  
+  <div class="card-block">
+      <table class="table table-responsive table-hover">
+          <thead class="blue-grey lighten-4">
+              <tr>
+                  <th>Film</th>
+                  <th>18+?</th>
+                  <th>Korte samenvatting</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let film of Filmdata ">
+                          <td>{{film.title}}</td>
+                          <td>{{film.adult}}</td>
+                          <td>{{film.overview}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+<!--/.Card content-->
