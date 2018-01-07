@@ -1,9 +1,12 @@
-                             
-<tbody>
-  <tr *ngFor="let item of data" (click)="SelectItem(item)" id="list">
-      <button type="button" class="btn btn-primary">{{item.naam_short}}</button>
-  </tr>
-</tbody>
+<div class="row">
+    <tbody>
+        <tr *ngFor="let item of data" (click)="SelectItem(item)" id="list">
+          <div class="col">
+              <button type="button" class="btn btn-primary">{{item.naam_short}}</button>
+          </div>
+       </tr>
+    </tbody>
+</div>                            
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="var_lat" [longitude]="var_lng"></agm-marker>
 </agm-map>

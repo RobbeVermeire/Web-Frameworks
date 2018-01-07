@@ -25,6 +25,7 @@ import { VeloComponent } from './velo/velo.component';
 import { VeloService } from './services/velo-service';
 import { FilmService } from './services/film-service';
 import { FilmComponent } from './film/film.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { FilmComponent } from './film/film.component';
     VeloComponent,
     BmiComponent,
     FilmComponent,
+    InfoComponent,
 
   ],
 
